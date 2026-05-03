@@ -114,12 +114,8 @@ public partial class ItemLookup
                     }
 
                     var specialShop = series.Value.SpecialShop.Value;
-                    var shop = "";
-                    if (!string.IsNullOrEmpty(inclusionShop.Unknown0.ExtractText()))
-                    {
-                        shop += $"{inclusionShop.Unknown0.ExtractText()}\n";
-                    }
-                    shop += $"{category.Value.Name}\n{specialShop.Name}";
+                    
+                    var shop = $"{category.Value.Name}\n{specialShop.Name}";
                     AddSpecialItem(specialShop, npcBase, resident, shop: shop);
                 }
                 catch (Exception)
